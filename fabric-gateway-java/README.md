@@ -1,4 +1,5 @@
 # Hyperledger Fabric Gateway SDK for Java
+撤掉了源码，pom文件也简化了下，主要是用来通过测试用例理解该sdk的结构和使用
 
 The Fabric Gateway SDK allows applications to interact with a Fabric blockchain network.  It provides a simple API to submit transactions to a ledger or query the contents of a ledger with minimal code.
 

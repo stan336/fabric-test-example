@@ -1,4 +1,8 @@
 # fabric-example
+当前主要是一些整理和总结，以及为部分源码和脚本的中文注释
+后续在逐步梳理该项目
+
+除了官方自带的fabcar channelcode，还有额外加入的hospital病例记录channelcode
 
 ## 安装
 GOPROXY=https://mirrors.aliyun.com/goproxy/
