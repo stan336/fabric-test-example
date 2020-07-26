@@ -1,0 +1,27 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+config
+bin
+vendor
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+*.gz
+data-server
+ordererOrganizations
+peerOrganizations
+.vscode
+node_modules
+package-lock.json
+hfc-key-store
+.idea
+*.iml
+logs
+target
