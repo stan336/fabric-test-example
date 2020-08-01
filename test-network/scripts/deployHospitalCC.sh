@@ -192,7 +192,7 @@ chaincodeInvokeInit() {
   # peer (if join was successful), let's supply it directly as we know
   # it using the "-o" option
   set -x
-  peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n ${CC_NAME} $PEER_CONN_PARMS --isInit -c '{"function":"InitLedger","Args":[]}' >&log.txt
+  peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n ${CC_NAME} $PEER_CONN_PARMS --isInit -c '{"Args":["InitLedger"]}' >&log.txt
   res=$?
   set +x
   cat log.txt
@@ -296,6 +296,9 @@ queryCommitted 2
 # 初始化时，是系统合约，需要orderer节点背书
 chaincodeInvokeInit 1 2
 
+# 确保上面操作完成
+sleep 20
+
 chaincodeInvoke 1 2
 
 # Query chaincode on peer0.org1
@@ -303,7 +306,8 @@ chaincodeInvoke 1 2
 chaincodeQuery 1
 
 sleep 10
-
-
-
 exit 0
+
+# 读取块信息
+# setGlobals 1
+# # peer channel fetch newest -c mychannel channel-artifacts/new.pb

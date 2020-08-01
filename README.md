@@ -1,6 +1,7 @@
 # fabric-example
 当前主要是一些整理和总结，以及为部分源码和脚本的中文注释
 后续在逐步梳理该项目
+注：当前使用的是`fabric 2.2`环境
 
 除了官方自带的fabcar channelcode，还有额外加入的hospital病例记录channelcode
 
@@ -143,3 +144,13 @@ GO111MODULE=on
 
 ## couchdb
 1. 每一个peer都有一个couchdb，用于全量保存数据
+
+
+
+## 常用命令
+1. 查看channel信息
+peer channel getinfo -c mychannel
+
+2. 获取最新的区块
+peer channel fetch newest -c mychannel channel-artifacts/new.pb
+configtxlator proto_decode --input ./channel-artifacts/new.pb --type common.Block | jq . > ./channel-artifacts/new.json
