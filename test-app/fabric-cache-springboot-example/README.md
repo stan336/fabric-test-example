@@ -1,4 +1,5 @@
-# fabric-java-springboot
+# fabric-cache-springboot-example
+针对fabric-cache-java在springboot的应用和测试，详细内容后面有时间了再详细描述
 
 ## 接口和性能测试
 环境：http://localhost:8080
